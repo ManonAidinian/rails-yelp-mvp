@@ -3,6 +3,13 @@
   <p>address : <%= @restaurant.address %></p>
   <p>contact : <%= @restaurant.phone_number %></p>
   <p>cuisine : <%= @restaurant.category %></p>
+  <p>reviews :
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.rating %> - <%= review.content %> </li>
+    <% end %>
+  </ul>
 
+  <%= link_to "Create a review", new_restaurant_review_path(@restaurant) %>
   <%= link_to "Return to listing", restaurants_path %>
 </div>

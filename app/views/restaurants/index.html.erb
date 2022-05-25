@@ -3,12 +3,12 @@
   <h1>Restaurants listing :</h1>
   <ul>
   <% @restaurants.each do |restaurant|%>
-  <li>
+  <li class="restaurants-list">
   <%= link_to restaurant.name, restaurant_path(restaurant) %>
   </li>
   <% end %>
   </ul>
 
-  <%= link_to "Create a restaurant", restaurants_new_path %>
+  <%= link_to "Create a restaurant", new_restaurant_path %>
 
 </div>
