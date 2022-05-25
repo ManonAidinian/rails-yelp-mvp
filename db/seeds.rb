@@ -5,14 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-`require "faker"`
+require "faker"
 
-Task.destroy_all
+Restaurant.destroy_all
 10.times do
-post = Post.new(
-title: Faker::Commerce.product_name,
-url: Faker::Internet.url,
-votes: (0..1000).to_a.sample
-)
-post.save!
+  restaurant = Restaurant.new(
+    name: Faker::Name.name,
+    address: Faker::Address.city,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    category: Restaurant::CATEGORY.sample
+  )
+  restaurant.save!
+  5.times do
+    review = Review.new(
+      content: Faker::Restaurant.review,
+      rating: Review::RATING.sample,
+      restaurant: restaurant
+    )
+    review.save!
+  end
 end
