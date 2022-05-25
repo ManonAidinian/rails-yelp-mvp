@@ -1,14 +1,22 @@
-<div class="container">
 
-  <h1>Restaurants listing :</h1>
-  <ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+  <div class="container">
+    <h1>Looking for the best place to eat?</h1>
+    <p>Discover and rate restaurants in your area</p>
+    <%= link_to "Add a restaurant", new_restaurant_path, class:"btn btn-flat"%>
+  </div>
+</div>
+
+<div class="cards">
+
   <% @restaurants.each do |restaurant|%>
-  <li class="restaurants-list">
-  <%= link_to restaurant.name, restaurant_path(restaurant) %>
-  </li>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/random" height="250"/>
+      <div class="card-product-infos">
+        <h2><%= link_to restaurant.name, restaurant_path(restaurant), class:"link"%></h2>
+        <p> 🌎 <%= restaurant.address %> --- 🍽 <%= restaurant.category %></p>
+      </div>
+    </div>
   <% end %>
-  </ul>
-
-  <%= link_to "Create a restaurant", new_restaurant_path %>
 
 </div>
