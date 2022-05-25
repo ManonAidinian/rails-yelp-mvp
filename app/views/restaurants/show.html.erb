@@ -1,6 +1,8 @@
-<h1><%= @restaurant.name %></h1>
-<p>address : <%= @restaurant.address %></p>
-<p>contact : <%= @restaurant.phone_number %></p>
-<p>cuisine : <%= @restaurant.category %></p>
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p>address : <%= @restaurant.address %></p>
+  <p>contact : <%= @restaurant.phone_number %></p>
+  <p>cuisine : <%= @restaurant.category %></p>
 
-<%= link_to "Return to listing", restaurants_path %>
+  <%= link_to "Return to listing", restaurants_path %>
+</div>

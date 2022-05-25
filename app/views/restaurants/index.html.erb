@@ -1,8 +1,14 @@
-<h1>Restaurants listing :</h1>
-<ul>
-<% @restaurants.each do |restaurant|%>
-<li>
-<%= link_to restaurant.name, restaurant_path(restaurant) %>
-</li>
-<% end %>
-</ul>
+<div class="container">
+
+  <h1>Restaurants listing :</h1>
+  <ul>
+  <% @restaurants.each do |restaurant|%>
+  <li>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </li>
+  <% end %>
+  </ul>
+
+  <%= link_to "Create a restaurant", restaurants_new_path %>
+
+</div>
