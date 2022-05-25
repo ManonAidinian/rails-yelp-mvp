@@ -20,7 +20,7 @@ Restaurant.destroy_all
     review = Review.new(
       content: Faker::Restaurant.review,
       rating: Review::RATING.sample,
-      restaurant: restaurant
+      restaurant_id: restaurant.id
     )
     review.save!
   end
